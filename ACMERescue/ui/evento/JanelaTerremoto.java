@@ -1,5 +1,6 @@
 package ui.evento;
-import dados.*;
+import dados.eventos.Evento;
+import dados.eventos.Terremoto;
 import excecoes.CampoVazio;
 
 import javax.swing.*;

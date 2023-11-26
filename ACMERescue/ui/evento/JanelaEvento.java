@@ -1,5 +1,9 @@
 package ui.evento;
-import dados.*;
+import dados.catalogo.ListaEventos;
+import dados.eventos.Ciclone;
+import dados.eventos.Evento;
+import dados.eventos.Seca;
+import dados.eventos.Terremoto;
 import excecoes.CampoVazio;
 import excecoes.CodigoInvalido;
 import ui.telainicial.Home;

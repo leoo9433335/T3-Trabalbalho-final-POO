@@ -2,14 +2,19 @@ package dados;
 
 public class Equipe {
 
-	@Override
-	public String toString() {
-		return "\nEquipe:" +
-				"\n\nCodinome = '" + codinome +
-				"\nQuantidade = " + quantidade +
-				"\nLatitude = " + latitude +
-				"\nLongitude = " + longitude ;
+	private String codinome;
 
+	private int quantidade;
+
+	private double latitude;
+
+	private double longitude;
+
+	public Equipe(String codinome, int quantidade, double latitude, double longitude) {
+		this.codinome = codinome;
+		this.quantidade = quantidade;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public String getCodinome() {
@@ -44,19 +49,7 @@ public class Equipe {
 		this.longitude = longitude;
 	}
 
-	public Equipe(String codinome, int quantidade, double latitude, double longitude) {
-		this.codinome = codinome;
-		this.quantidade = quantidade;
-		this.latitude = latitude;
-		this.longitude = longitude;
+	public String equipeToString() {
+		return "\nCodinome: "+getCodinome()+"\nQuantidade de membros: "+getQuantidade()+"\nLatitude: "+getLatitude()+"\nLongitude: "+getLongitude();
 	}
-
-	private String codinome;
-
-	private int quantidade;
-
-	private double latitude;
-
-	private double longitude;
-
 }
