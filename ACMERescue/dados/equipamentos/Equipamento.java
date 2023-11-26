@@ -39,7 +39,7 @@ public class Equipamento {
 	}
 
 	public String equipamentoToString(){
-		return "\nID: "+getId()+"\nNome: "+getNome()+"\nCusto por dia: "+getCustoDia();
+		return "\nID: "+getId()+"\nNome: "+getNome()+"\nCusto por dia: R$ "+getCustoDia();
 	}
 
 

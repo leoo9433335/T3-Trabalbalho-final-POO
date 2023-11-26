@@ -9,9 +9,14 @@ public class CaminhaoTanque extends Equipamento {
 		capacidade = 0;
 	}
 
-	public String camTanqueToString(){
-		return "---CAMINHAO TANQUE---"+equipamentoToString()+"Capacidade: "+capacidade+" mil litros";
+	public void setCapacidade(double capacidade) {
+		this.capacidade = capacidade;
 	}
+
+	public String camTanqueToString(){
+		return "---CAMINHAO TANQUE---"+equipamentoToString()+"\nCapacidade: "+capacidade+" mil litros";
+	}
+
 
 
 }

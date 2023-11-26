@@ -24,7 +24,7 @@ public class Escavadeira extends Equipamento {
 	}
 
 	public String escavadeiraToString(){
-		return "---ESCAVADEIRA---"+equipamentoToString()+"\nCombustível: "+combustivel+"\nCarga: "+carga;
+		return "---ESCAVADEIRA---"+equipamentoToString()+"\nCombustível: "+combustivel+"\nCarga (em metros cúbicos): "+carga;
 	}
 
 }

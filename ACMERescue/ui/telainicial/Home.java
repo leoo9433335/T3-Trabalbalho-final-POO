@@ -1,14 +1,11 @@
-
 package ui.telainicial;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import excecoes.CampoVazio;
 import ui.equipe.JanelaEquipe;
 import ui.equipamento.JanelaEquipamento;
 import ui.evento.*;
-
 
 public class Home extends JFrame {
     private JButton evento, equipamento, equipe;
@@ -21,19 +18,11 @@ public class Home extends JFrame {
     public Home() {
         super();
         this.setTitle("ACMERescue");
-        //setSize(800, 500);
         tratador = new TratadorEventos();
 
-        // Crie um JPanel para usar o CardLayout
         frame = new JFrame();
         frame.setTitle("Tela inicial");
         frame.setSize(800, 500);
-        //frame.setLayout(new BoxLayout(frame, BoxLayout.Y_AXIS));
-
-        // Adicione a JanelaEvento ao cardPanel
-//        janelaEvento = new JanelaEvento(this);
-//        janelaEquipe = new JanelaEquipe(this);
-        //janelaEvento.setJanelaAnterior(this);
 
         evento = new JButton("Cadastrar evento");
         evento.addActionListener(tratador);
@@ -47,12 +36,9 @@ public class Home extends JFrame {
         buttonPanel.add(equipamento);
         buttonPanel.add(equipe);
 
-
-        // Adicione o buttonPanel ao cardPanel com um nome associado
         frame.add(buttonPanel);
         frame.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //this.setVisible(true);
     }
 
     public void exibir() {
@@ -83,14 +69,7 @@ public class Home extends JFrame {
                 janelaEquipamento = new JanelaEquipamento(Home.this);
                 janelaEquipamento.exibir();
             }
-
-
-//            if (e.getSource() == equipe){
-//                frame.setVisible(false);
-//                JanelaEquipe paginaCadEquipe = new JanelaEquipe(Home.this);
-//                paginaCadEquipe.exibir();
-//            }
-        }
         }
     }
+}
 
