@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Exer">
+  <grid id="27dc6" binding="painel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="12" y="18" width="596" height="447"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="967f5" class="javax.swing.JButton" binding="limparButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Limpar"/>
+        </properties>
+      </component>
+      <component id="4f1b6" class="javax.swing.JButton" binding="mostraDadosButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="3" row-span="3" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="mostra dados"/>
+        </properties>
+      </component>
+      <component id="1cf05" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="5" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Nome do Equipamento:"/>
+        </properties>
+      </component>
+      <component id="8ca68" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Codigo:"/>
+        </properties>
+      </component>
+      <component id="b5517" class="javax.swing.JTextField" binding="campocodigo">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="2f302" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Cadastro Equipamento"/>
+        </properties>
+      </component>
+      <component id="72b69" class="javax.swing.JButton" binding="confirmarButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="2" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="confirmar "/>
+        </properties>
+      </component>
+      <component id="c5907" class="javax.swing.JTextArea" binding="mostradadosequipamentos">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="f4f66" class="javax.swing.JTextField" binding="camponome">
+        <constraints>
+          <grid row="1" column="2" row-span="5" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <scrollpane id="c169b">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="a2f45" class="javax.swing.JTextArea" binding="campomensagensconsluta">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="abad6" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Preço"/>
+        </properties>
+      </component>
+      <component id="3b32e" class="javax.swing.JButton" binding="encerrarButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="1" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Encerrar"/>
+        </properties>
+      </component>
+      <component id="b94ee" class="javax.swing.JTextField" binding="precoTextField" default-binding="true">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="9087c" class="javax.swing.JComboBox" binding="Tipos">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="1" left="1" bottom="1" right="1" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="BARCO"/>
+            <item value="CAMINHÃOTANQUE"/>
+            <item value="ESCAVADEIRA"/>
+          </model>
+          <toolTipText value=""/>
+        </properties>
+      </component>
+      <component id="c70eb" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Tipo"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
