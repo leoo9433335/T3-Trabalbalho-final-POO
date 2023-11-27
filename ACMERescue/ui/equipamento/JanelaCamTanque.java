@@ -45,7 +45,7 @@ public class JanelaCamTanque extends JanelaGenerica {
         c.setCapacidade(Double.parseDouble(capacidade.getText().trim()));
     }
 
-    class TratadorEventos extends Component implements ActionListener {
+    private class TratadorEventos extends Component implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == finalizarCad){

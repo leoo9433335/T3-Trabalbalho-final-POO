@@ -29,6 +29,13 @@ public class ListaEventos {
         }
     }
 
+    public boolean estaVazio(){
+        if(listaEventos.isEmpty()){
+            return true;
+        }
+        return false;
+    }
+
     public boolean verificaCodigo(String codigo) {
         if(listaEventos.isEmpty()) return true;
         for (Evento i : listaEventos) {

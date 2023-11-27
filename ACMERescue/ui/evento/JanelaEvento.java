@@ -41,7 +41,7 @@ public class JanelaEvento extends JanelaGenerica {
 
         janelaAnterior = h;
 
-        listaEventos = new ListaEventos();
+        listaEventos = janelaAnterior.getDadosEventos();
 
         //this.setTitle("Cadastro de Eventos");
 
@@ -143,7 +143,7 @@ public class JanelaEvento extends JanelaGenerica {
         this.janelaAnterior = janelaAnterior;
     }
 
-    class TratadorEventos extends Component implements ActionListener {
+    private class TratadorEventos extends Component implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -165,7 +165,6 @@ public class JanelaEvento extends JanelaGenerica {
                         double longitudeDoub = Double.parseDouble(longitudeStr.trim());
                         boolean confFormato = listaEventos.formatoCodigo(codigoStr);
                         boolean confere = listaEventos.verificaCodigo(codigoStr);
-
                         if (confFormato) {
                             if (confere) {
                                 listaEventos.addEvento(defineInstancia(tipoEvento, codigoStr, dataStr, latitudeDoub, longitudeDoub));

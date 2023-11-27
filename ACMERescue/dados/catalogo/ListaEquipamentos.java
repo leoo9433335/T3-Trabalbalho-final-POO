@@ -28,15 +28,6 @@ public class ListaEquipamentos {
         return true;
     }
 
-    public boolean formatoCodigo(String cd){
-        try{
-            int codigoValido = Integer.parseInt(cd);
-            return true;
-        } catch (NumberFormatException e){
-            return false;
-        }
-    }
-
     public int getQuantEquipamentos(){
         return equipamentosCadastrados.size();
     }

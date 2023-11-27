@@ -29,7 +29,7 @@ public class JanelaEquipe extends JanelaGenerica {
         super();
         janelaAnterior = p;
 
-        equipes = new ListaEquipes();
+        equipes = janelaAnterior.getDadosEquipes();
 
         frame = new JFrame("Cadastro de Equipes");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class JanelaGenerica extends JFrame{
+    private JFrame frame;
 
     public JanelaGenerica(){
         super();
@@ -15,4 +16,5 @@ public class JanelaGenerica extends JFrame{
         painel.add(campoTexto);
         return painel;
     }
+
 }

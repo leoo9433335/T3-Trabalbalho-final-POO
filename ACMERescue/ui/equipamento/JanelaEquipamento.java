@@ -35,7 +35,7 @@ public class JanelaEquipamento extends JanelaGenerica {
 
             janelaAnterior = h;
 
-            listaEquipamentos = new ListaEquipamentos();
+            listaEquipamentos = janelaAnterior.getDadosEquipamentos();
 
             labelId = new JLabel("ID: ");
             id = new JTextField(30);
@@ -130,7 +130,7 @@ public class JanelaEquipamento extends JanelaGenerica {
             this.janelaAnterior = janelaAnterior;
         }
 
-        class TratadorEventos extends Component implements ActionListener {
+        private class TratadorEventos extends Component implements ActionListener {
 
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -1,18 +1,38 @@
 package dados;
 
+import dados.equipamentos.Equipamento;
+
 public class Atendimento {
 
-	private int cod;
+	private int codigo;
 
 	private String dataInicio;
 
 	private int duracao;
 
-	private String status;
+	private StatusAtendimento status;
+
+	public Atendimento(int c, String data){
+		codigo = c;
+		dataInicio = data;
+		duracao = 0;
+		status = StatusAtendimento.PENDENTE;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public StatusAtendimento getStatus() {
+		return status;
+	}
 
 	public double calculaCusto() {
 		return 0;
 	}
+
+
+
 
 	public static double calculateHaversineDistance(double lat1, double lon1, double lat2, double lon2) {
 		double R = 6371;  // raio da Terra em quilômetros

@@ -1,10 +1,16 @@
 package dados.eventos;
+import dados.Equipe;
+import dados.Atendimento;
+import dados.StatusAtendimento;
 
 public class Evento {
 	private String codigo;
 	private String data;
 	private double latitude;
 	private double longitude;
+	private Equipe equipeAtendimento;
+	private StatusAtendimento statusAtendimento;
+	private Atendimento atendimento;
 
 	public Evento(String codigo, String data, double latitude, double longitude){
 		this.codigo = codigo;
@@ -42,6 +48,22 @@ public class Evento {
 
 	public double getLongitude() {
 		return longitude;
+	}
+
+	public void setEquipeAtendimento(Equipe equipeAtendimento) {
+		this.equipeAtendimento = equipeAtendimento;
+	}
+
+	public Equipe getEquipeAtendimento() {
+		return equipeAtendimento;
+	}
+
+	public void setAtendimento(Atendimento atendimento) {
+		this.atendimento = atendimento;
+	}
+
+	public Atendimento getAtendimento() {
+		return atendimento;
 	}
 
 	public String eventoToString(){
