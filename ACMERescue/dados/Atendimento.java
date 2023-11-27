@@ -31,7 +31,9 @@ public class Atendimento {
 		return 0;
 	}
 
-
+	public String atendimentoToString(){
+		return "\n---ATENDIMENTO---\nCódigo: "+codigo+"\nData de início: "+dataInicio+"\nDuração: "+duracao+"\nStatus : "+status;
+	}
 
 
 	public static double calculateHaversineDistance(double lat1, double lon1, double lat2, double lon2) {

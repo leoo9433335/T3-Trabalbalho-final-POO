@@ -1,11 +1,13 @@
 package dados.catalogo;
 
+import dados.ConfereCodigo;
 import dados.eventos.Evento;
+import dados.ConfereCodigo;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-public class ListaEventos {
+public class ListaEventos implements ConfereCodigo {
     private int quantEventos;
     private ArrayList<Evento> listaEventos;
 
@@ -46,6 +48,7 @@ public class ListaEventos {
         return true;
     }
 
+    @Override
     public boolean formatoCodigo(String cd){
         try{
             int codigoValido = Integer.parseInt(cd);
@@ -54,6 +57,7 @@ public class ListaEventos {
             return false;
         }
     }
+
 
     public boolean addEvento(Evento e) {
         if (verificaCodigo(e.getCodigo())) {

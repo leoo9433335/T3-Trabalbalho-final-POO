@@ -17,7 +17,7 @@ public class JanelaAtendimento extends JanelaGenerica {
     private ArrayList<Evento> listaEventos;
     private JList<Evento> listaEventosCampo;
     private JLabel labelCampoEventos;
-    private JButton selecionarEvento;
+    private JButton selecionarEvento, sair;
     private DefaultListModel modelo;
 
     private JPanel container;
@@ -53,10 +53,11 @@ public class JanelaAtendimento extends JanelaGenerica {
         selecionarEvento = new JButton("Selecionar evento");
         selecionarEvento.addActionListener(tratador);
 
+        sair = new JButton("Sair");
+        sair.addActionListener(tratador);
 
         container.add(scrollPane);
         container.add(selecionarEvento);
-
 
         frame.add(container);
 
@@ -106,6 +107,11 @@ public class JanelaAtendimento extends JanelaGenerica {
                     c.exibir();
                 }
                 }
+
+            if(e.getSource()==sair){
+                frame.setVisible(false);
+                janelaAnterior.exibir();
+            }
             }
     }
     }

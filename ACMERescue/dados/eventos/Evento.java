@@ -1,7 +1,9 @@
 package dados.eventos;
+import dados.ConfereCodigo;
 import dados.Equipe;
 import dados.Atendimento;
 import dados.StatusAtendimento;
+
 
 public class Evento {
 	private String codigo;

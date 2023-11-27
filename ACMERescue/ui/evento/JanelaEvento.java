@@ -7,7 +7,6 @@ import dados.eventos.Terremoto;
 import excecoes.CampoVazio;
 import excecoes.CodigoInvalido;
 import ui.telainicial.Home;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -150,7 +149,6 @@ public class JanelaEvento extends JanelaGenerica {
             if (e.getSource() == criarEvento) {
                 try {
                     String codigoStr = codigo.getText().trim();
-
                     String dataStr = data.getText().trim();
                     String latitudeStr = latitude.getText().trim();
                     String longitudeStr = longitude.getText().trim();

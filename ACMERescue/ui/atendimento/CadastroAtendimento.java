@@ -18,11 +18,10 @@ import java.awt.event.ActionListener;
 public class CadastroAtendimento extends JanelaGenerica {
     private JPanel container;
     private Evento evento;
-    private JTextField codigo, dataInicio, duracao;
-    private JButton criarAtendimento, limparCampos, atendimentosCad, sairCad;
-    private JLabel labelCodigo, labelDataInicio, labelDuracao;
+    private JTextField codigo, dataInicio;
+    private JButton criarAtendimento, limpar, atendimentosCad, sairCad;
+    private JLabel labelCodigo, labelDataInicio;
 
-    private String status;
     private JTextArea area;
     private TratadorEventos tratador;
 
@@ -42,6 +41,9 @@ public class CadastroAtendimento extends JanelaGenerica {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 500);
 
+        container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
         labelCodigo = new JLabel("Código: ");
         codigo = new JTextField(30);
 
@@ -53,36 +55,30 @@ public class CadastroAtendimento extends JanelaGenerica {
 
 
         criarAtendimento = new JButton("Criar atendimento");
-        limparCampos = new JButton("Limpar campos");
+        container.add(criarAtendimento);
+        criarAtendimento.addActionListener(tratador);
+
+        limpar = new JButton("Limpar campos");
+        container.add(limpar);
+        limpar.addActionListener(tratador);
+
         atendimentosCad = new JButton("Apresentar todos atendimentos");
+        container.add(atendimentosCad);
+        atendimentosCad.addActionListener(tratador);
+
         sairCad = new JButton("Sair");
-
-
-        container = new JPanel();
-        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.add(sairCad);
+        sairCad.addActionListener(tratador);
 
         container.add(codigo);
         container.add(dataInicio);
-        //container.add(duracao);
-        container.add(criarAtendimento);
-        container.add(limparCampos);
-        container.add(atendimentosCad);
-        container.add(sairCad);
         container.add(criarPainel(labelCodigo, codigo));
         container.add(criarPainel(labelDataInicio, dataInicio));
-        //container.add(criarPainel(labelDuracao, duracao));
 
         area = new JTextArea(20, 50);
         scrollPane = new JScrollPane(area);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         container.add(scrollPane);
-
-        criarAtendimento.addActionListener(tratador);
-//        tratador = new JanelaEvento.TratadorEventos();
-//        criarEvento.addActionListener(tratador);
-//        limparCampos.addActionListener(tratador);
-//        eventosCad.addActionListener(tratador);
-//        sairCad.addActionListener(tratador);
 
         frame.add(container);
 
@@ -102,31 +98,49 @@ public class CadastroAtendimento extends JanelaGenerica {
             if (e.getSource() == criarAtendimento) {
                 try {
                     String codigoStr = codigo.getText().trim();
-                    int codigoInt = Integer.parseInt(codigoStr);
-                    String dataStr = dataInicio.getText().trim();
+                    String dataInicioStr = dataInicio.getText().trim();
 
-                    if (codigoStr.isEmpty() || dataStr.isEmpty()) {
+                    if (codigoStr.isEmpty() || dataInicioStr.isEmpty()) {
                         throw new CampoVazio("Todos os campos para inserir as informações devem ser preenchidos! ");
-                    }
-                        if (listaAtendimentos.verificaCodigo(codigoInt)) {
-                            throw new CodigoInvalido("Não é possível realizar o cadastro desse atendimento pois esse código já foi inserido! ");
+                    } else {
+                        if (!listaAtendimentos.formatoCodigo(codigoStr)) {
+                            throw new CodigoInvalido("Apenas valores numéricos devem ser inseridos no campo de código! ");
                         } else {
-                            Atendimento a = new Atendimento(codigoInt, dataStr);
-                            evento.setAtendimento(a);
-                            listaAtendimentos.addAtendimento(a);
-                            int t = listaAtendimentos.getQuantAtendimentos();
-                            area.setText("Evento cadastrado! " + t);
+                            int cod = Integer.parseInt(codigoStr);
+                            if(listaAtendimentos.verificaCodigo(cod)){
+                                throw new CodigoInvalido("Nao é possível cadastrar esse atendimento pois esse código já foi inserido. ");
+                            } else{
+                                Atendimento a = new Atendimento(cod, dataInicioStr);
+                                evento.setAtendimento(a);
+                                listaAtendimentos.addAtendimento(a);
+                                int t = listaAtendimentos.getQuantAtendimentos();
+                                area.setText("Evento cadastrado! " + t);
+                            }
                         }
-                } catch (CampoVazio z) {
+                    }
+                } catch (CampoVazio | CodigoInvalido z) {
                     area.setText(z.getMessage());
                     JOptionPane.showMessageDialog(CadastroAtendimento.this, z.getMessage());
-                } catch (CodigoInvalido c) {
-                    area.setText(c.getMessage());
-                    JOptionPane.showMessageDialog(CadastroAtendimento.this, c.getMessage());
                 }
+            }
 
-//            if(e.getSource() == atendimentosCad){
-//            }
+            if (e.getSource() == limpar) {
+                codigo.setText("");
+                dataInicio.setText("");
+                area.setText("");
+            }
+
+            if(e.getSource() == sairCad){
+                frame.setVisible(false);
+                janelaAnterior.exibir();
+            }
+
+            if(e.getSource() == atendimentosCad){
+                area.setText("");
+                for (Atendimento ev : listaAtendimentos.getListaAtendimentos()) {
+                    area.append(ev.atendimentoToString());
+                    area.append("\n\n");
+                }
             }
         }
     }

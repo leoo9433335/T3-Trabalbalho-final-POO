@@ -1,12 +1,13 @@
 package dados.catalogo;
 import dados.Atendimento;
+import dados.ConfereCodigo;
 import dados.Equipe;
 import dados.equipamentos.Equipamento;
 import dados.eventos.Evento;
 
 import java.util.ArrayList;
 
-public class ListaAtendimentos {
+public class ListaAtendimentos implements ConfereCodigo {
     private ArrayList<Atendimento> listaAtendimentos;
     private int quantAtendimentos;
 
@@ -17,6 +18,16 @@ public class ListaAtendimentos {
     public ArrayList<Atendimento> getListaAtendimentos() {
         ArrayList<Atendimento> cloneLista = (ArrayList<Atendimento>) listaAtendimentos.clone();
         return cloneLista;
+    }
+
+    @Override
+    public boolean formatoCodigo(String cd){
+        try{
+            int codigoValido = Integer.parseInt(cd);
+            return true;
+        } catch (NumberFormatException e){
+            return false;
+        }
     }
 
     public boolean verificaCodigo(int codigo) {
